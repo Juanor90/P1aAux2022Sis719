@@ -1,160 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Bootstrap_4/css/bootstrap.min.css">	
-	<!-- Alertify CSS -->
-    <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css">  
-	<!-- Alertify theme default -->  
-	<link rel="stylesheet" href="plugins/alertifyjs/css/themes/default.min.css"/>  
+    <link rel="stylesheet" href="Bootstrap_4/css/bootstrap.min.css" />
+    <!-- Alertify CSS -->
+    <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css" />
+    <!-- Alertify theme default -->
+    
     <title>@DevFanor</title>
   </head>
-  <body>      	
-	<div class="container">
-		<div class="jumbotron">
-			<h2 class="text-center">Seminario de Sistemas 2022</h2>
-			<h3 class="display-3 text-center">Tarea N°2</h3>
-            <h6 class="text-right">Doc. Ing Ditmar Castro Angulo</h6>
-		</div>
-		<h5 class="text-center jumbotron">Auxiliatura Practica N°1 </h5>
-		<div class="row">
-			<div class="col-lg-12">
-				<button class="btn btn-danger">Fanor choque Aguirre</button>
-			</div>	
-		   </div>
-		<div class="row text-center jumbotron " >
-			<div class="col-lg-6">
-                <br>
-				<h5 class="btn btn-danger">SCRIPTS </h5>
-				<br>
-                <h6>1.- Realiza un script que pida la edad y si es mayor de 18 años indica que ya puede conducir.</h6>
-                <button   id="btn1" type="button" class="btn btn-success">Respuesta 1</button>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2 class="text-center">Seminario de Sistemas 2022</h2>
+        <h3 class="display-3 text-center">Tarea N°2</h3>
+        <h6 class="text-right">Doc. Ing Ditmar Castro Angulo</h6>
+      </div>
+      <h5 class="text-center jumbotron">Auxiliatura Practica N°1</h5>
+      <div class="row">
+        <div class="col-lg-12">
+          <button class="btn btn-danger">Fanor choque Aguirre</button>
+        </div>
+      </div>
+      <div class="row text-center jumbotron">
+        <div class="col-lg-6">
+          <br />
+          <h5 class="btn btn-danger">SCRIPTS</h5>
+          <br />
+          <h6>
+            1.- Realiza un script que pida la edad y si es mayor de 18 años
+            indica que ya puede conducir.
+          </h6>
+          <br />
+          <button id="btn1" type="button" class="btn btn-success">
+            Respuesta 1
+          </button>
 
-                <button   id="btnn" type="button" class="btn btn-secundary">Respuesta 1</button>
+          <button id="btnn" type="button" class="btn btn-secundary">
+            Respuesta 1
+          </button>
+          <br />
+          <h6>
+            2.- Realiza un script que pida números hasta que se pulse
+            “cancelar”. Si no es un número deberá indicarse con un «alert» y
+            seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma
+            total de los números introducidos.
+          </h6>
+          <br />
+          <button id="btn2" type="button" class="btn btn-success">
+            Respuesta 2
+          </button>
+          <button id="btnn2" type="button" class="btn btn-secundary">
+            Respuesta 2
+          </button>
+          <br />
+          <h6>
+            3.- Realiza un script que pida por teclado 3 edades y 3 nombres e
+            indique el nombre del mayor.
+          </h6>
+          <button id="btn3" type="button" class="btn btn-success">
+            Respuesta 3
+          </button>
+          <button id="btnn3" type="button" class="btn btn-secundary">
+            Respuesta 3
+          </button>
 
-                <h6> Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un
-                    «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.</h6>
-                    <button id="btn2" type="button" class="btn btn-success">Respuesta 3 </button>
-                   
-                 
-                    <button id="btnn2" type="button" class="btn btn-secundary"">Respuesta 2 </button>
-                
-               >
-			</div>				
-
-		</div>		
-	</div>  
+          >
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="JQuery/jquery-3.3.1.min.js"></script>	 
-	<!-- Popper.js-->  
-    <script src="Popper/popper.min.js"></script>	 	 
-	<!-- Bootstrap JS -->  
+    <script src="JQuery/jquery-3.3.1.min.js"></script>
+    <!-- Popper.js-->
+    <script src="Popper/popper.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="Bootstrap_4/js/bootstrap.min.js"></script>
-	  
-	<!-- Plugin Sweet alert -->  
-    <script src="plugins/sweetalert/sweetalert.min.js"></script>  		  
-	<!-- Plugins Alertify -->  
-    <script src="plugins/alertifyjs/js/alertify.min.js"></script> 	  
-	  
-	<script>
 
-	const btn1 = document.getElementById('btn1');//pregunta1
-    const btnn = document.getElementById('btnn');//pregunta1
-    const btn2 = document.getElementById('btn2');//pregunta2
-    const btnn2 = document.getElementById('btnn2');//pregunta2
-        btn1.onclick = () => {
-            swal("Introduce tu Edad:", {
-                content: "input",
-            })
-                .then((value) => {
-                    let edad
-                    edad = value
-                    if (edad >= 18){
-                        swal(`Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`);
-                }
-                    else {
-                    swal(`Introduce un número válido`)
-                    }
-                });
+    <!-- Plugin Sweet alert -->
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- Plugins Alertify -->
+    <script src="plugins/alertifyjs/js/alertify.min.js"></script>
 
-        }
-        //pregunta1
-    btnn.onclick = () => {
+    <script>
+      const btn1 = document.getElementById("btn1"); //pregunta1
+      const btnn = document.getElementById("btnn"); //pregunta1
+      const btn2 = document.getElementById("btn2"); //pregunta2
+      const btnn2 = document.getElementById("btnn2"); //pregunta2
+      const btn3 = document.getElementById("btn3"); //pregunta3
+      const btnn3 = document.getElementById("btnn3"); //pregunta3
+
+      //pregunta1
+      btn1.onclick = () => {
         swal("Introduce tu Edad:", {
+          content: "input",
+        }).then((value) => {
+          let edad;
+          edad = value;
+          if (edad >= 18) {
+            swal(`Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`);
+          } else {
+            swal(`Introduce un número válido`);
+          }
+        });
+      };
+
+      //pregunta1
+      btnn.onclick = () => {
+        swal("Introduce tu Edad:", {
+          content: "input",
+        }).then((value) => {
+          let edad, final;
+          edad = value;
+          if (isNaN(edad)) {
+            final = swal(`Error. No es un Número `);
+          } else {
+            final =
+              edad < 18
+                ? ` Eres Menor de Edad. No puedes Conducir`
+                : `Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`;
+            swal(final);
+          }
+        });
+      };
+
+      //pregunta2
+      btnn2.onclick = () => {
+        let suma = 0;
+        //BUCLE DO WHILE PARA INTRODUCIR VARIOS
+        do {
+          //PEDIMOS EL NÚMERO POR TECLADO
+          let numero = prompt("Introduce un numero");
+          //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
+          if (Number(numero) == numero) {
+            //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
+            numero = Number(numero);
+            //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
+            suma = suma + numero;
+          }
+          //SI LO INTRODUCIDO NO ES UN NÚMERO
+          else {
+            //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
+            if (numero != undefined) {
+              alert(numero + " No es un numero");
+            }
+          }
+          //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
+        } while (numero != undefined);
+        //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
+        swal("la suma todal de los numeros introducidoes es:" + suma);
+      };
+
+      //pregunta2
+      btn2.onclick = () => {
+        let suma = 0;
+        //BUCLE DO WHILE PARA INTRODUCIR VARIOS
+        do {
+          //PEDIMOS EL NÚMERO POR TECLADO
+          var numero = prompt("Introduce un numero");
+          //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
+          if (Number(numero) == numero) {
+            //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
+            numero = Number(numero);
+            //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
+            suma = suma + numero;
+          }
+          //SI LO INTRODUCIDO NO ES UN NÚMERO
+          else {
+            //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
+            if (numero != undefined) {
+              alert(numero + " No es un numero");
+            }
+          }
+          //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
+        } while (numero != undefined);
+        //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
+        alert("la suma todal de los numeros introducidoes es:" + suma);
+      };
+
+      //pregunta3
+      btn3.onclick = () => {
+        //INTRODUCIMOR TODOS LOS DATOS
+        let nombre1 = prompt("Introduce Nombre 1:");
+        let edad1 = Number(prompt("Introduce Edad 1:"));
+
+        let nombre2 = prompt("Introduce Nombre 2:");
+        let edad2 = Number(prompt(" Introduce Edad 2:"));
+
+        let nombre3 = prompt(" Introduce Nombre 3:");
+        let edad3 = Number(prompt(" Introduce Edad 3:"));
+
+        //Función max() devuelve el mayor de los argumentos pasados.
+        let maximo = Math.max(edad1, edad2, edad3);
+
+        if (maximo == edad1) {
+          //document.write("El mayor es: " + nombre1);
+          alert("El mayor es: " + nombre1);
+        }
+        if (maximo == edad2) {
+          //document.write("El mayor es: " + nombre2);
+          alert("El mayor es: " + nombre2);
+        }
+        if (maximo == edad3) {
+          //document.write("El mayor es: " + nombre3);
+          alert("El mayor es: " + nombre3);
+        }
+      };
+      //pregunta3
+      btnn3.onclick = () => {
+        //INTRODUCIMOR TODOS LOS DATOS
+
+
+        //  let edad1=parseInt(prompt('Ingrese Edad 1:',''));
+
+        swal({
+          title: "Introduce Edad 1",
+          content: "input",
+          buttons: true,
+          dangerMode: false,
+        }).then((value) => {
+          let edad1 = value;
+
+          //let nombre1=prompt('Ingrese el primer nombre:','');
+          swal({
+            title: "Introduce Primer Nombre",
             content: "input",
-        })
-            .then((value) => {
-                let edad, final
-                edad = value
-                if (isNaN(edad)){
-                    final=swal(`Error. No es un Número `);
-                }
-                else {
-                    final =(edad <18) ? ` Eres Menor de Edad. No puedes Conducir`: `Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`;
-                    swal(final)
-                }
+            buttons: true,
+            dangerMode: false,
+          }).then((value) => {
+            let nombre1 = value;
+
+            //  let edad2=parseInt(prompt('Ingrese Edad 2:',''));
+
+            swal({
+              title: "Introduce Edad 2",
+              content: "input",
+              buttons: true,
+              dangerMode: false,
+            }).then((value) => {
+              let edad2 = value;
+
+              //let nombre2=prompt('Ingrese segundo nombre:','');
+              swal({
+                title: "Introduce Segundo Nombre",
+                content: "input",
+                buttons: true,
+                dangerMode: false,
+              }).then((value) => {
+                let nombre2 = value;
+
+                //let  edad3=parseInt(prompt('Ingrese Edad 3:',''));
+                swal({
+                  title: "Introduce Edad 3",
+                  content: "input",
+                  buttons: true,
+                  dangerMode: false,
+                }).then((value) => {
+                  let edad3 = value;
+
+                  //let nombre3=prompt('Ingrese tercer nombre:','');
+
+                  swal({
+                    title: "Introduce Tercer Nombre",
+                    content: "input",
+                    buttons: true,
+                    dangerMode: false,
+                  }).then((value) => {
+                    let nombre3 = value;
+
+                    if (edad1 > edad2 && edad1 > edad3) {
+                      swal("el mayor es el " + nombre1);
+                    } else {
+                      if (edad2 > edad3) {
+                        swal("el mayor es el " + nombre2);
+                      } else {
+                        swal("el mayor es el " + nombre3);
+                      }
+                    }
+                  });
+                });
+              });
             });
-
-    }
-    //pregunta2
-    btnn2.onclick= () => {
-  let suma = 0;
-//BUCLE DO WHILE PARA INTRODUCIR VARIOS
-do {
-    //PEDIMOS EL NÚMERO POR TECLADO
-    var numero = prompt("Introduce un numero");
-    //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
-    if (Number(numero) == numero) {
-        //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
-        numero = Number(numero);
-        //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
-        suma = suma + numero;
-    }
-    //SI LO INTRODUCIDO NO ES UN NÚMERO
-    else {
-    //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
-        if (numero != undefined) {
-            alert(numero + " No es un numero");
-        }
-    }
-//VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
-} while (numero != undefined);
-//SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-swal("la suma todal de los numeros introducidoes es:"+suma);
-}
-
-//pregunta2
-btn2.onclick= () => {
-  let suma = 0;
-//BUCLE DO WHILE PARA INTRODUCIR VARIOS
-do {
-    //PEDIMOS EL NÚMERO POR TECLADO
-    var numero = prompt("Introduce un numero");
-    //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
-    if (Number(numero) == numero) {
-        //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
-        numero = Number(numero);
-        //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
-        suma = suma + numero;
-    }
-    //SI LO INTRODUCIDO NO ES UN NÚMERO
-    else {
-    //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
-        if (numero != undefined) {
-            alert(numero + " No es un numero");
-        }
-    }
-//VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
-} while (numero != undefined);
-//SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-alert("la suma todal de los numeros introducidoes es:"+suma);
-}
-
-		
-	</script>  
+          });
+        });
+      };
+    </script>
   </body>
 </html>
