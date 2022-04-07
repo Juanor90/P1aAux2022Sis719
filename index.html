@@ -30,12 +30,19 @@
                 <br>
 				<h5 class="btn btn-danger">SCRIPTS </h5>
 				<br>
-                <h6>Realiza un script que pida la edad y si es mayor de 18 años indica que ya puede conducir.</h6>
+                <h6>1.- Realiza un script que pida la edad y si es mayor de 18 años indica que ya puede conducir.</h6>
                 <button   id="btn1" type="button" class="btn btn-success">Respuesta 1</button>
 
-                <button   id="btn" type="button" class="btn btn-success">Respuesta 1</button>
+                <button   id="btnn" type="button" class="btn btn-secundary">Respuesta 1</button>
 
-
+                <h6> Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un
+                    «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.</h6>
+                    <button id="btn2" type="button" class="btn btn-success">Respuesta 3 </button>
+                   
+                 
+                    <button id="btnn2" type="button" class="btn btn-secundary"">Respuesta 2 </button>
+                
+               >
 			</div>				
 
 		</div>		
@@ -57,9 +64,8 @@
 
 	const btn1 = document.getElementById('btn1');//pregunta1
     const btnn = document.getElementById('btnn');//pregunta1
-		
-
-        //pregunta 1
+    const btn2 = document.getElementById('btn2');//pregunta2
+    const btnn2 = document.getElementById('btnn2');//pregunta2
         btn1.onclick = () => {
             swal("Introduce tu Edad:", {
                 content: "input",
@@ -77,7 +83,7 @@
 
         }
         //pregunta1
-    btn.onclick = () => {
+    btnn.onclick = () => {
         swal("Introduce tu Edad:", {
             content: "input",
         })
@@ -94,6 +100,59 @@
             });
 
     }
+    //pregunta2
+    btnn2.onclick= () => {
+  let suma = 0;
+//BUCLE DO WHILE PARA INTRODUCIR VARIOS
+do {
+    //PEDIMOS EL NÚMERO POR TECLADO
+    var numero = prompt("Introduce un numero");
+    //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
+    if (Number(numero) == numero) {
+        //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
+        numero = Number(numero);
+        //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
+        suma = suma + numero;
+    }
+    //SI LO INTRODUCIDO NO ES UN NÚMERO
+    else {
+    //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
+        if (numero != undefined) {
+            alert(numero + " No es un numero");
+        }
+    }
+//VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
+} while (numero != undefined);
+//SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
+swal("la suma todal de los numeros introducidoes es:"+suma);
+}
+
+//pregunta2
+btn2.onclick= () => {
+  let suma = 0;
+//BUCLE DO WHILE PARA INTRODUCIR VARIOS
+do {
+    //PEDIMOS EL NÚMERO POR TECLADO
+    var numero = prompt("Introduce un numero");
+    //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
+    if (Number(numero) == numero) {
+        //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
+        numero = Number(numero);
+        //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
+        suma = suma + numero;
+    }
+    //SI LO INTRODUCIDO NO ES UN NÚMERO
+    else {
+    //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
+        if (numero != undefined) {
+            alert(numero + " No es un numero");
+        }
+    }
+//VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
+} while (numero != undefined);
+//SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
+alert("la suma todal de los numeros introducidoes es:"+suma);
+}
 
 		
 	</script>  
