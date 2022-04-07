@@ -42,7 +42,7 @@
             Respuesta 1
           </button>
 
-          <button id="btnn" type="button" class="btn btn-secundary">
+          <button id="btnn" type="button" class="btn btn-warning">
             Respuesta 1
           </button>
           <br />
@@ -56,7 +56,7 @@
           <button id="btn2" type="button" class="btn btn-success">
             Respuesta 2
           </button>
-          <button id="btnn2" type="button" class="btn btn-secundary">
+          <button id="btnn2" type="button" class="btn btn-warning">
             Respuesta 2
           </button>
           <br />
@@ -67,8 +67,18 @@
           <button id="btn3" type="button" class="btn btn-success">
             Respuesta 3
           </button>
-          <button id="btnn3" type="button" class="btn btn-secundary">
+          <button id="btnn3" type="button" class="btn btn-warning">
             Respuesta 3
+          </button>
+          <br />
+          <h6>
+            4.- Genera 3 números aleatorios entre 1 y 99 pero que no se repita ninguno.
+          </h6>
+          <button id="btn4" type="button" class="btn btn-success">
+            Respuesta 4
+          </button>
+          <button id="btnn4" type="button" class="btn btn-warning">
+            Respuesta 4
           </button>
 
           >
@@ -95,6 +105,9 @@
       const btnn2 = document.getElementById("btnn2"); //pregunta2
       const btn3 = document.getElementById("btn3"); //pregunta3
       const btnn3 = document.getElementById("btnn3"); //pregunta3
+
+      const btn4 = document.getElementById("btn4"); //pregunta3
+      const btnn4 = document.getElementById("btnn4"); //pregunta3
 
       //pregunta1
       btn1.onclick = () => {
@@ -131,7 +144,7 @@
       };
 
       //pregunta2
-      btnn2.onclick = () => {
+      btn2.onclick = () => {
         let suma = 0;
         //BUCLE DO WHILE PARA INTRODUCIR VARIOS
         do {
@@ -158,7 +171,7 @@
       };
 
       //pregunta2
-      btn2.onclick = () => {
+      btnn2.onclick = () => {
         let suma = 0;
         //BUCLE DO WHILE PARA INTRODUCIR VARIOS
         do {
@@ -290,6 +303,61 @@
           });
         });
       };
+
+//pregunta4
+btn4.onclick = () => {
+let i = 0;
+   let num;
+    let uno = 0;
+    let dos = 0;
+    let tres = 0;
+    do {
+        num = Math.floor((Math.random() * 99) + 1);
+        if ((num != uno) && (num != dos) && (num != 3)) {
+            document.write(num + "<br>");
+            i++;
+            if (i == 1) {
+                uno = num;
+            }
+            if (i == 2) {
+                dos = num;
+            }
+            if (i == 3) {
+                tres = num;
+            }
+        }
+    } while (i < 3);
+  }
+     
+  //pregunta4
+      btnn4.onclick = () => {
+
+        let i = 0;
+    let num;
+    let uno = 0;
+    let dos = 0;
+    let tres = 0;
+    alertify.success('Resultados en números aleatorios:')
+    do {
+        num = Math.floor((Math.random() * 99) + 1);
+        
+        if ((num != uno) && (num != dos) && (num != 3)) {
+          
+          alertify.warning( "<tr>"+num + "</tr>");
+            i++;
+            if (i == 1) {
+                uno = num;
+            }
+            if (i == 2) {
+                dos = num;
+            }
+            if (i == 3) {
+                tres = num;
+            }
+        }
+    } while (i < 3);
+
+    }
     </script>
   </body>
 </html>
