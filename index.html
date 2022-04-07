@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap_4/css/bootstrap.min.css">	
+	<!-- Alertify CSS -->
+    <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css">  
+	<!-- Alertify theme default -->  
+	<link rel="stylesheet" href="plugins/alertifyjs/css/themes/default.min.css"/>  
+    <title>@DevFanor</title>
+  </head>
+  <body>      	
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center">Seminario de Sistemas 2022</h2>
+			<h3 class="display-3 text-center">Tarea N°2</h3>
+            <h6 class="text-right">Doc. Ing Ditmar Castro Angulo</h6>
+		</div>
+		<h5 class="text-center jumbotron">Auxiliatura Practica N°1 </h5>
+		<div class="row">
+			<div class="col-lg-12">
+				<button class="btn btn-danger">Fanor choque Aguirre</button>
+			</div>	
+		   </div>
+		<div class="row text-center jumbotron " >
+			<div class="col-lg-6">
+                <br>
+				<h5 class="btn btn-danger">SCRIPTS </h5>
+				<br>
+                <h6>Realiza un script que pida la edad y si es mayor de 18 años indica que ya puede conducir.</h6>
+                <button   id="btn1" type="button" class="btn btn-success">Respuesta 1</button>
+
+                <button   id="btn" type="button" class="btn btn-success">Respuesta 1</button>
+
+
+			</div>				
+
+		</div>		
+	</div>  
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="JQuery/jquery-3.3.1.min.js"></script>	 
+	<!-- Popper.js-->  
+    <script src="Popper/popper.min.js"></script>	 	 
+	<!-- Bootstrap JS -->  
+    <script src="Bootstrap_4/js/bootstrap.min.js"></script>
+	  
+	<!-- Plugin Sweet alert -->  
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>  		  
+	<!-- Plugins Alertify -->  
+    <script src="plugins/alertifyjs/js/alertify.min.js"></script> 	  
+	  
+	<script>
+
+	const btn1 = document.getElementById('btn1');//pregunta1
+    const btnn = document.getElementById('btnn');//pregunta1
+		
+
+        //pregunta 1
+        btn1.onclick = () => {
+            swal("Introduce tu Edad:", {
+                content: "input",
+            })
+                .then((value) => {
+                    let edad
+                    edad = value
+                    if (edad >= 18){
+                        swal(`Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`);
+                }
+                    else {
+                    swal(`Introduce un número válido`)
+                    }
+                });
+
+        }
+        //pregunta1
+    btn.onclick = () => {
+        swal("Introduce tu Edad:", {
+            content: "input",
+        })
+            .then((value) => {
+                let edad, final
+                edad = value
+                if (isNaN(edad)){
+                    final=swal(`Error. No es un Número `);
+                }
+                else {
+                    final =(edad <18) ? ` Eres Menor de Edad. No puedes Conducir`: `Puedes Conducir. Eres Mayor de Edad tienes: ${value} años`;
+                    swal(final)
+                }
+            });
+
+    }
+
+		
+	</script>  
+  </body>
+</html>
