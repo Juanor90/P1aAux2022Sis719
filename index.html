@@ -180,6 +180,12 @@
          
          
           <button onclick=" Unicos();" type="button" class="btn btn-warning">Respuesta 16</button>
+          <h6>17.- Programa una función que dado un array de números devuelva un objeto con dos arreglos el primero con los 
+            números pares y en el segundo con los números impare</h6>
+         
+         
+          <button onclick=" arrayObjetos();" type="button" class="btn btn-warning">Respuesta 17</button>
+        
         </div>
        
       
@@ -690,6 +696,42 @@ for(var indice = 0; indice < personas.length; indice++) {
 }
 
 console.log(unicos);
+}
+
+
+function arrayObjetos() {
+
+const paresImpares = (numeros = undefined) => {
+  if (numeros === undefined)
+    return console.log("Debes Ingresar un array de numeros");
+
+  if (numeros.length === 0) return console.log("El array ingresado está Vacio");
+
+  if (!(numeros instanceof Array))
+    return console.log(`El valor ${numeros} no es un Array de Numeros`);
+
+  numeros = numeros.filter((numero) => typeof numero === "number");
+
+  let pares = [],
+    impares = [];
+
+  for (let i = 0; i < numeros.length; i++) {
+    numeros[i] % 2 === 0
+      ? pares.push(numeros[i]) //par
+      : impares.push(numeros[i]); //impar
+  }
+
+  return console.log({
+    pares,
+    impares,
+  });
+};
+
+paresImpares()
+paresImpares(284)
+paresImpares([1,2,3,4,5,7,8,6,9,12,11,10]);
+paresImpares([2, 3, 4, 5, 7, 8, 6, 9, 12, 11, 10,0,-3,-4,-12]);
+
 }
     </script>
   </body>
