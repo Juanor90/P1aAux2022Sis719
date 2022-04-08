@@ -173,7 +173,13 @@
           <br/>
 
           <h6>15.- Programa una función que valide que un texto sea un nombre valido. Entrada(‘edson’) devolverá ‘verdadero’.</h6>
+          
           <button onclick=" validate();" type="button" class="btn btn-warning">Respuesta 15</button>
+          <h6>16.- Programa una función que dado un arreglo de elementos, elimine los duplicados:
+            entrada([‘5’, ’25’, ‘10’, ‘s’, ‘5’, ‘a’, ‘a’]) devolverá ([‘5’, ‘25’, ‘10’, ‘s’, ‘a’]). </h6>
+         
+         
+          <button onclick=" Unicos();" type="button" class="btn btn-warning">Respuesta 16</button>
         </div>
        
       
@@ -652,7 +658,39 @@ function validate() {
     });
 }
 
+function Unicos() {
+const personas = [
+  { nombre: 'Edu' },
+  { nombre: 'Manuel' },
+  { nombre: 'Edu', },
+  { nombre: 'Manuel',  },
+  { nombre: 'daniel',  },
+  { nombre: 'daniel',  },
+  { nombre: 'daniel',  },
+  { nombre: 'danilo',  },
+  { nombre: 'danilo',  },
+];
+const unicos = [];
 
+for(var indice = 0; indice < personas.length; indice++) {
+
+  const persona = personas[indice];
+  let esDuplicado = false;
+  for(var i = 0; i < unicos.length; i++) {
+
+    if (unicos[i].nombre === persona.nombre) {
+      esDuplicado = true;
+      break;
+    }
+  }
+  
+  if (!esDuplicado) {
+    unicos.push(persona);
+  }
+}
+
+console.log(unicos);
+}
     </script>
   </body>
 </html>
