@@ -120,7 +120,7 @@
             
           </h6>
           <a href="/juego.html" target="_blank">
-            <button>Respuesta 9</button>
+            <button type="button" class="btn btn-warning">Respuesta 9</button>
         </a>  
 
         </div>
@@ -129,7 +129,7 @@
             <h5 class="btn btn-danger">FUNCIONES</h5>
           <br/>
           <h6>
-            10.- Rrea una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, 
+            10.- Realiza una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, 
             aplicará el 21 por ciento por defecto.
             
           </h6>
@@ -147,7 +147,7 @@
             
           </h6>
           <a href="/#" target="_blank">
-            <button>Respuesta 11</button>
+            <button type="button" class="btn btn-warning">Respuesta 11</button>
         </a>
         <h6>
             12.-Realiza un script que muestre un reloj en pantalla con fecha y hora y que se actualice cada segundo. Función 
@@ -155,7 +155,7 @@
             
           </h6>
           <a href="/reloj.html" target="_blank">
-            <button>Respuesta 12</button>
+            <button type="button" class="btn btn-warning"">Respuesta 12</button>
         </a>
         <br/>
         <h6>
@@ -163,7 +163,7 @@
           
         </h6>
       
-          <button id="btn13" type="button" class="btn btn-warning">Respuesta 13</button>
+        <button onclick="Anios(event);" type="button" class="btn btn-warning">Respuesta 13</button>
      
         </div>
           
@@ -199,6 +199,7 @@
       const btn8 = document.getElementById("btn8"); //pregunta5
       const btn10 = document.getElementById("btn10"); //pregunta5
       
+     
       //pregunta1
       btn1.onclick = () => {
         swal("Introduce tu Edad:", {
@@ -544,6 +545,33 @@ function masIva(precio, iva){
     swal("Precio sin iva: " + precio+  "Precio más Iva: " + resultado);
  
 }
+
+
+
+
+function Anios(ev) {
+	// http://stackoverflow.com/questions/7763327/how-to-calculate-date-difference-in-javascript
+	var dia = prompt("Digite o dia de nascimento");
+	var mes = prompt("Digite o mes de nascimento");
+	var ano = prompt("Digite o ano de nascimento");
+
+	var dataNascimento = new Date(0 + ano, 0 + mes - 1, 0 + dia);
+	var hoje = new Date();
+	var intervalo = hoje - dataNascimento;
+
+	var dias = parseInt((hoje - intervalo) / (24 * 3600 * 1000));
+
+	var d1Y = dataNascimento.getFullYear();
+	var d2Y = hoje.getFullYear();
+	var d1M = dataNascimento.getMonth();
+	var d2M = hoje.getMonth();
+
+	var meses = (d2M+12*d2Y)-(d1M+12*d1Y);
+	var anos = hoje.getFullYear()-dataNascimento.getFullYear();
+	Swal.fire(" HAN PASADO:" + anos + "AÑOS");
+
+}
+
     </script>
   </body>
 </html>
