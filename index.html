@@ -113,7 +113,20 @@
           <button id="btn8" type="button" class="btn btn-warning">
             Respuesta 8
           </button>
-
+        </div>
+          <div class="col-lg-6">
+            <br />
+            <h5 class="btn btn-danger">FUNCIONES</h5>
+          <br/>
+          <h6>
+            10.- Rrea una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, 
+            aplicará el 21 por ciento por defecto.
+            
+          </h6>
+          <button id="btn10" type="button" class="btn btn-warning">
+            Respuesta 10
+          </button>
+        </div>
           
         </div>
       </div>
@@ -145,6 +158,7 @@
       const btn6 = document.getElementById("btn6"); //pregunta5
       const btn7 = document.getElementById("btn7"); //pregunta5
       const btn8 = document.getElementById("btn8"); //pregunta5
+      const btn10 = document.getElementById("btn10"); //pregunta5
 
       //pregunta1
       btn1.onclick = () => {
@@ -471,6 +485,25 @@ btn8.onclick = () => {
     else {
         alert("Número erróneo");
     }
+}
+
+btn10.onclick = () => {
+
+function masIva(precio, iva){
+      iva = iva || 21
+      var coniva = (precio + precio*iva/100);
+      return coniva;
+    }
+    var precio = Number(prompt("Introduce un precio"));
+    var iva = Number(prompt("Introduce el iva"));
+    if(iva > 0){
+      var resultado = masIva(precio, iva);
+    }
+    else{
+      var resultado = masIva(precio);
+    }
+    swal("Precio sin iva: " + precio+  "Precio más Iva: " + resultado);
+ 
 }
     </script>
   </body>
