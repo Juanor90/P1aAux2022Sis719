@@ -166,9 +166,14 @@
         <button onclick="Anios(event);" type="button" class="btn btn-warning">Respuesta 13</button>
         <br/>
         <h6>
-          Programa una función que dada una cadena de texto cuente el numero de vocales y consonantes.
+          14.- Programa una función que dada una cadena de texto cuente el numero de vocales y consonantes.
         </h6>
-          <button onclick=" countCharactersCategory(event);" type="button" class="btn btn-warning">Respuesta 13</button>
+          <button onclick=" countCharactersCategory(event);" type="button" class="btn btn-warning">Respuesta 14</button>
+        
+          <br/>
+
+          <h6>15.- Programa una función que valide que un texto sea un nombre valido. Entrada(‘edson’) devolverá ‘verdadero’.</h6>
+          <button onclick=" validate();" type="button" class="btn btn-warning">Respuesta 15</button>
         </div>
        
       
@@ -613,6 +618,40 @@ swal("Número total de vocales" + totalVowels +"Número total de consonantes"+ t
 var s1 = "hector oscar fanor";
 document.write("Input string: " + s1 + "<br>");
 countCharactersCategory(s1);
+
+//pregunta15
+
+function validate() {
+
+
+    
+    Swal.fire({
+        title: "Introduce un texto",
+        input: "text",
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        cancelButtonText: "Cancelar",
+        inputValidator: nombre => {
+            // Si el valor es válido, debes regresar undefined. Si no, una cadena
+            if (!nombre) {
+                return "Por favor escribe un texto";
+            } else {
+                return undefined;
+            }
+        }
+    })
+    .then(resultado => {
+       
+            
+
+            if (resultado.value) {
+            let nombre = resultado.value;
+            alertify.success("Verdadero, "+ nombre);
+        
+        }
+    });
+}
+
 
     </script>
   </body>
