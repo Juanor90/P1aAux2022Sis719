@@ -164,8 +164,15 @@
         </h6>
       
         <button onclick="Anios(event);" type="button" class="btn btn-warning">Respuesta 13</button>
-     
+        <br/>
+        <h6>
+          Programa una función que dada una cadena de texto cuente el numero de vocales y consonantes.
+        </h6>
+          <button onclick=" countCharactersCategory(event);" type="button" class="btn btn-warning">Respuesta 13</button>
         </div>
+       
+      
+       
           
         </div>
       </div>
@@ -571,6 +578,41 @@ function Anios(ev) {
 	Swal.fire(" HAN PASADO:" + anos + "AÑOS");
 
 }
+
+function countCharactersCategory(s) {
+var totalSpecialCharacters = 0, totalDigits = 0, totalVowels = 0, totalConsonants = 0;
+for (var i = 0; i < s.length; i++) {
+var c = s[i];
+// Alphabets family
+if ( (c >= "a" && c <= "z") || (c >= "A" && c <= "Z") ) {
+// Converting character to lower case
+c = c.toLowerCase();
+// Vowels
+if (c == "a" || c == "e" || c == "i" || c == "o" || c == "u") {
+totalVowels++;
+}
+// Consonants
+else {
+totalConsonants++;
+}
+}
+// Digits family
+else if (c >= "0" && c <= "9") {
+totalDigits++;
+}
+// Special characters family
+else {
+totalSpecialCharacters++;
+}
+}
+swal("Número total de vocales" + totalVowels +"Número total de consonantes"+ totalConsonants);
+
+
+}
+// Test case: 1
+var s1 = "hector oscar fanor";
+document.write("Input string: " + s1 + "<br>");
+countCharactersCategory(s1);
 
     </script>
   </body>
