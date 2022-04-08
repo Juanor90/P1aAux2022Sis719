@@ -87,6 +87,17 @@
           <button id="btn5" type="button" class="btn btn-warning">
             Respuesta 5
           </button>
+          <br/>
+          <h6>
+            6.- Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un script que extraiga la 
+            cadena que se encuentra entre los paréntesis. Ejemplo: Si escribimoe el texto “Hola (que) tal” se mostrará 
+            “que”. Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo “(“pero no el signo “)” mostrará 
+            desde el primer paréntesis hasta el final.
+            
+          </h6>
+          <button id="btn6" type="button" class="btn btn-warning">
+            Respuesta 6
+          </button>
 
           
         </div>
@@ -116,7 +127,7 @@
       const btn4 = document.getElementById("btn4"); //pregunta4
       const btnn4 = document.getElementById("btnn4"); //pregunta4
       const btn5 = document.getElementById("btn5"); //pregunta5
-
+      const btn6 = document.getElementById("btn6"); //pregunta5
       //pregunta1
       btn1.onclick = () => {
         swal("Introduce tu Edad:", {
@@ -384,6 +395,31 @@ let cadena = prompt("Introduce una cadena de texto:");
     swal("Número de Vocales: " + contador + ".");
 }
 
+
+//pregunta6
+btn6.onclick = () => {
+let cadena = prompt("Introduce un Texto que contenga paréntesis:");
+    //Longitud de la cadena
+    let numchar = cadena.length;
+    let j;
+    var car;
+    let salida = "";
+    let copiar = false;
+        
+	for (j = 0; j < numchar; j++) {
+		car = cadena.charAt(j);    //recuperamos el caracter i del string.
+		if (car == ")") {
+            copiar = false;
+        }
+        if (copiar) {
+            salida = salida + car;
+        }
+        if (car == "(") {
+                copiar = true;
+        }
+    }
+    swal(salida);
+}
     </script>
   </body>
 </html>
