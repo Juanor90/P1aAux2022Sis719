@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css">  
 	<!-- Alertify theme default -->  
 	<link rel="stylesheet" href="plugins/alertifyjs/css/themes/default.min.css"/>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>@DevFanor</title>
   </head>
   <body>      	
@@ -56,6 +57,7 @@
     <script src="Bootstrap_4/js/bootstrap.min.js"></script>
 	  
 	<!-- Plugin Sweet alert -->  
+    
     <script src="plugins/sweetalert/sweetalert.min.js"></script>  		  
 	<!-- Plugins Alertify -->  
     <script src="plugins/alertifyjs/js/alertify.min.js"></script> 	  
@@ -100,32 +102,6 @@
             });
 
     }
-    //pregunta2
-    btnn2.onclick= () => {
-  let suma = 0;
-//BUCLE DO WHILE PARA INTRODUCIR VARIOS
-do {
-    //PEDIMOS EL NÚMERO POR TECLADO
-    var numero = prompt("Introduce un numero");
-    //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
-    if (Number(numero) == numero) {
-        //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
-        numero = Number(numero);
-        //SUMAMOS LO QUE HAY EN LA VARIABLE SUMA CON ESE NÚMERO
-        suma = suma + numero;
-    }
-    //SI LO INTRODUCIDO NO ES UN NÚMERO
-    else {
-    //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO VÁLIDO
-        if (numero != undefined) {
-            alert(numero + " No es un numero");
-        }
-    }
-//VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
-} while (numero != undefined);
-//SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-swal("la suma todal de los numeros introducidoes es:"+suma);
-}
 
 //pregunta2
 btn2.onclick= () => {
@@ -151,8 +127,62 @@ do {
 //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
 } while (numero != undefined);
 //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-alert("la suma todal de los numeros introducidoes es:"+suma);
+alert("la suma total de los numeros introducido es:"+suma);
 }
+    //pregunta2
+    btnn2.onclick= () => {
+
+        let suma = 0;
+      
+      let entrada = null;
+      do {
+        entrada = prompt( "Introduce un número, pulse Cancelar si no quiere seguir: ");
+        
+                    // Salir del ciclo en el caso de que se de click en Cancelar
+                    if (entrada === null) break;
+                // Convertir a Number
+                let numero = parseFloat(entrada);
+                // Puede ver en consola el valor de numero
+                console.log("El Número que acaba de ingresar es:" + numero);
+                // True si la conversión no fue posible
+                if (isNaN(numero)) {
+                alert("El valor introducido " + entrada + " no es un numero");
+                } else {
+                // Se ejecuta sólo si la entrada pudo ser convertida a un número
+                
+                suma = suma + numero;
+                
+                }
+                // Confirmar si el usuario desea seguir ingresando datos. Confirm retorna true (OK) o false (Cancel)
+                if (
+                    
+            confirm("¿Desea seguir ingresando datos?")
+         /*    swal({
+  buttons: {
+    cancel: true,
+    confirm: true,
+  },
+})*/
+                
+                ) {
+            }  
+            else break 
+       
+          
+       }
+        
+    
+      while (entrada !== null);
+      // Si no ingresó ningún dato
+      if (entrada === null) {
+        swal("No se ingresaron datos, el programa finalizó");
+      } else {
+        swal("La suma de los números es: " + suma + "");
+        
+      }
+    }
+
+
 
 		
 	</script>  
