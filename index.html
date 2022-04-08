@@ -12,7 +12,7 @@
     <!-- Alertify CSS -->
     <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css" />
     <!-- Alertify theme default -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>@DevFanor</title>
   </head>
   <body>
@@ -106,6 +106,13 @@
           <button id="btn7" type="button" class="btn btn-warning">
             Respuesta 7
           </button>
+          <h6>
+            8.- Realiza un script que muestre la serie de fibonacci hasta un número entre 1 y 100 pedido por teclado.
+            
+          </h6>
+          <button id="btn8" type="button" class="btn btn-warning">
+            Respuesta 8
+          </button>
 
           
         </div>
@@ -137,6 +144,7 @@
       const btn5 = document.getElementById("btn5"); //pregunta5
       const btn6 = document.getElementById("btn6"); //pregunta5
       const btn7 = document.getElementById("btn7"); //pregunta5
+      const btn8 = document.getElementById("btn8"); //pregunta5
 
       //pregunta1
       btn1.onclick = () => {
@@ -442,6 +450,27 @@ let cadena = prompt("Introduce un Texto:");
         salida = car + salida;
     }
     swal(salida);
+}
+//pregunta8
+btn8.onclick = () => {
+    let numero = Number(prompt("Introduce un número entre 1 y 100"));
+    if((numero >= 1) && (numero <= 100)) {
+        var x = 0;
+        var y = 1;
+        var z;
+        //IMPRIMIMOS EL PRIMER NÚMERO QUE SERÁ UN 0 Y NO SE PUEDE METER EN EL BUCLE
+        document.write(x + "<br>");
+        //BUCLE PARA IMPRIMIR EL RESTO DE NÚMEROS (numero-1 porque ya imprimimos uno)
+        for (i = 0; i < (numero-1); i++) {
+            z = x + y;
+            document.write(z + "<br>");
+            y = x;
+            x = z;
+        }
+    }
+    else {
+        alert("Número erróneo");
+    }
 }
     </script>
   </body>
