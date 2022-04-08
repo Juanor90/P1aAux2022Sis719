@@ -52,7 +52,7 @@
             seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma
             total de los números introducidos.
           </h6>
-          <br />
+        
           <button id="btn2" type="button" class="btn btn-success">
             Respuesta 2
           </button>
@@ -80,8 +80,15 @@
           <button id="btnn4" type="button" class="btn btn-warning">
             Respuesta 4
           </button>
+          <br/>
+          <h6>
+            5.- Realiza un script que cuente el número de vocales que tiene un texto.
+          </h6>
+          <button id="btn5" type="button" class="btn btn-warning">
+            Respuesta 5
+          </button>
 
-          >
+          
         </div>
       </div>
     </div>
@@ -106,8 +113,9 @@
       const btn3 = document.getElementById("btn3"); //pregunta3
       const btnn3 = document.getElementById("btnn3"); //pregunta3
 
-      const btn4 = document.getElementById("btn4"); //pregunta3
-      const btnn4 = document.getElementById("btnn4"); //pregunta3
+      const btn4 = document.getElementById("btn4"); //pregunta4
+      const btnn4 = document.getElementById("btnn4"); //pregunta4
+      const btn5 = document.getElementById("btn5"); //pregunta5
 
       //pregunta1
       btn1.onclick = () => {
@@ -358,6 +366,24 @@ let i = 0;
     } while (i < 3);
 
     }
+    btn5.onclick = () => {
+
+let cadena = prompt("Introduce una cadena de texto:");
+    let numchar = cadena.length;    //Devuelve la longitud del string.
+    cadena = cadena.toUpperCase();  //Devuelve el string en mayúsculas.
+
+    var car;
+    let contador = 0;
+    let i;
+    for (i = 0; i < numchar; i++) {
+        car = cadena.charAt(i);    //recupera el caracter i del string.
+        if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+            contador++;
+        }
+    }
+    swal("Número de Vocales: " + contador + ".");
+}
+
     </script>
   </body>
 </html>
