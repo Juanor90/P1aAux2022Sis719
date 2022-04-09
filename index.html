@@ -168,7 +168,7 @@
         <h6>
           14.- Programa una función que dada una cadena de texto cuente el numero de vocales y consonantes.
         </h6>
-          <button onclick=" countCharactersCategory(event);" type="button" class="btn btn-warning">Respuesta 14</button>
+          <button onclick=" countCharactersCategory();" type="button" class="btn btn-warning">Respuesta 14</button>
         
           <br/>
 
@@ -592,14 +592,15 @@ function Anios(ev) {
 
 	var meses = (d2M+12*d2Y)-(d1M+12*d1Y);
 	var anos = hoje.getFullYear()-dataNascimento.getFullYear();
-	Swal.fire(" HAN PASADO:" + anos + "AÑOS");
+	Swal.fire(` Han pasado: ${anos} años`);
 
 }
 
-function countCharactersCategory(s) {
+function countCharactersCategory() {
+  var cadena = prompt("Introduzca una cadena");
 var totalSpecialCharacters = 0, totalDigits = 0, totalVowels = 0, totalConsonants = 0;
-for (var i = 0; i < s.length; i++) {
-var c = s[i];
+for (var i = 0; i < cadena.length; i++) {
+var c = cadena[i];
 // Alphabets family
 if ( (c >= "a" && c <= "z") || (c >= "A" && c <= "Z") ) {
 // Converting character to lower case
@@ -622,14 +623,15 @@ else {
 totalSpecialCharacters++;
 }
 }
-swal("Número total de vocales" + totalVowels +"Número total de consonantes"+ totalConsonants);
-
+//swal("Número total de vocales" + totalVowels +"Número total de consonantes"+ totalConsonants);
+swal(`Número total de vocales: ${totalVowels} Número  todal de consonantes: ${totalConsonants}`);
 
 }
+
 // Test case: 1
-var s1 = "hector oscar fanor";
-document.write("Input string: " + s1 + "<br>");
-countCharactersCategory(s1);
+//var s1 = "hector oscar fanor";
+//document.write("Input string: " + s1 + "<br>");
+//countCharactersCategory(s1);
 
 //pregunta15
 
