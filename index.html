@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="plugins/alertifyjs/css/alertify.min.css" />
     <!-- Alertify theme default -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  
+
     <title>@DevFanor</title>
   </head>
   <body>
@@ -185,9 +187,11 @@
          
          
           <button onclick=" arrayObjetos();" type="button" class="btn btn-warning">Respuesta 17</button>
-        
-        </div>
        
+        </div>
+        <button id="btnSA_1" type="button" class="btn btn-outline-success">Respuesta 5</button>
+				<button id="btnSA_2" type="button" class="btn btn-outline-info">Respuesta 6</button>
+				<button id="btnSA_3" type="button" class="btn btn-outline-warning">Respuesta 7</button>
       
        
           
@@ -206,8 +210,33 @@
     <script src="plugins/sweetalert/sweetalert.min.js"></script>
     <!-- Plugins Alertify -->
     <script src="plugins/alertifyjs/js/alertify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen" />
+  
 
-    <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript"></script>		
+
+<!-- Core files -->
+<script src="jquery.alerts.js" type="text/javascript"></script>
+<link href="jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+    
+<script>
+
+$("#btnSA_3").click( function() {
+					jalert('This is a custom alert box', 'Alert Dialog');
+				});
+
+				$("#btnSA_1").click( function() {
+					jConfirm('Can you confirm this?', 'Confirmation Dialog', function(r) {
+						jAlert('Confirmed: ' + r, 'Confirmation Results');
+					});
+				});
+
+
       const btn1 = document.getElementById("btn1"); //pregunta1
       const btnn = document.getElementById("btnn"); //pregunta1
       const btn2 = document.getElementById("btn2"); //pregunta2
@@ -224,6 +253,7 @@
       const btn10 = document.getElementById("btn10"); //pregunta5
       
      
+
       //pregunta1
       btn1.onclick = () => {
         swal("Introduce tu Edad:", {
@@ -473,37 +503,59 @@ let i = 0;
     } while (i < 3);
 
     }
+
+
+    //pregunta5
     btn5.onclick = () => {
 
-let cadena = prompt("Introduce una cadena de texto:");
-    let numchar = cadena.length;    //Devuelve la longitud del string.
-    cadena = cadena.toUpperCase();  //Devuelve el string en mayúsculas.
+     
+
+//let cadena = prompt("Introduce una cadena de texto:"
+swal("Introduce un texto:", {
+          content: "input",
+        }).then((value) => {
+let cadena;
+cadena=value
+          let numchar = value.length;    //Devuelve la longitud del string.
+    value = value.toUpperCase();  //Devuelve el string en mayúsculas.
 
     var car;
     let contador = 0;
     let i;
     for (i = 0; i < numchar; i++) {
-        car = cadena.charAt(i);    //recupera el caracter i del string.
+        car = value.charAt(i);    //recupera el caracter i del string.
         if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
             contador++;
         }
     }
     swal("Número de Vocales: " + contador + ".");
-}
+  })
+  }
+
 
 
 //pregunta6
 btn6.onclick = () => {
-let cadena = prompt("Introduce un Texto que contenga paréntesis:");
-    //Longitud de la cadena
-    let numchar = cadena.length;
+
+
+
+//let cadena = prompt("Introduce un Texto que contenga paréntesis:");
+  
+//Longitud de la cadena
+swal("Introduce un texto que contenga parentesis:", {
+          content: "input",
+        }).then((value) =>
+         {
+           let cadena;
+           cadena=value;
+let numchar = value.length;
     let j;
     var car;
     let salida = "";
     let copiar = false;
         
 	for (j = 0; j < numchar; j++) {
-		car = cadena.charAt(j);    //recuperamos el caracter i del string.
+		car = value.charAt(j);    //recuperamos el caracter i del string.
 		if (car == ")") {
             copiar = false;
         }
@@ -515,11 +567,21 @@ let cadena = prompt("Introduce un Texto que contenga paréntesis:");
         }
     }
     swal(salida);
-}
+  })
+  }
 //pregunta7
 btn7.onclick = () => {
-let cadena = prompt("Introduce un Texto:");
-    let numchar = cadena.length;
+
+//  let cadena = prompt("Introduce un Texto:");
+  
+swal("Introduce un texto :", {
+          content: "input",
+        }).then((value) =>
+         {
+           let cadena;
+           cadena=value;
+
+let numchar = cadena.length;
     let j;
     var car;
     let salida = "";
@@ -528,10 +590,20 @@ let cadena = prompt("Introduce un Texto:");
         salida = car + salida;
     }
     swal(salida);
-}
+
+  }) 
+ }
 //pregunta8
 btn8.onclick = () => {
-    let numero = Number(prompt("Introduce un número entre 1 y 100"));
+  //  let numero = Number(prompt("Introduce un número entre 1 y 100"));
+  swal("Introduce un número entre 1 y 100:", {
+          content: "input",
+        }).then((value) =>
+         {
+           let numero;
+           numero=value;
+           
+  
     if((numero >= 1) && (numero <= 100)) {
         var x = 0;
         var y = 1;
@@ -547,30 +619,40 @@ btn8.onclick = () => {
         }
     }
     else {
-        alert("Número erróneo");
+        swal("Número erróneo");
     }
+  })
 }
 
 btn10.onclick = () => {
 
-function masIva(precio, iva){
-      iva = iva || 21
-      var coniva = (precio + precio*iva/100);
-      return coniva;
-    }
-    var precio = Number(prompt("Introduce un precio"));
-    var iva = Number(prompt("Introduce el iva"));
-    if(iva > 0){
-      var resultado = masIva(precio, iva);
-    }
-    else{
-      var resultado = masIva(precio);
-    }
-    swal("Precio sin iva: " + precio+  "Precio más Iva: " + resultado);
- 
+
+function masIva(precio, iva = 21) {
+
+let coniva = (precio + precio * iva / 100);
+return coniva;
+}
+
+let precio = Number(window.prompt("Introduce un precio"));
+
+let iva = Number(prompt("Introduce el iva"));
+
+let resultado = 0;
+
+if (iva > 0) {
+resultado = masIva(precio, iva);
+} else {
+resultado = masIva(precio);
+}
+swal(`Precio sin iva:  ${precio} Precio más Iva: ${resultado}`);
 }
 
 
+
+
+    
+
+  
 
 
 function Anios(ev) {
@@ -735,6 +817,7 @@ paresImpares([1,2,3,4,5,7,8,6,9,12,11,10]);
 paresImpares([2, 3, 4, 5, 7, 8, 6, 9, 12, 11, 10,0,-3,-4,-12]);
 
 }
+
     </script>
   </body>
 </html>
