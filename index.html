@@ -136,8 +136,10 @@
             
           </h6>
           <button id="btn10" type="button" class="btn btn-warning">
+            
             Respuesta 10
           </button>
+        
           <h6>
             11.- Crea una función validar() para validar la entrada de datos de un formulario 
             a. Para evitar que se envíe un formulario varias veces conviene deshabilitar el botón de envío tras enviarlo 
@@ -189,10 +191,12 @@
           <button onclick=" arrayObjetos();" type="button" class="btn btn-warning">Respuesta 17</button>
        
         </div>
-        <button id="btnSA_1" type="button" class="btn btn-outline-success">Respuesta 5</button>
-				<button id="btnSA_2" type="button" class="btn btn-outline-info">Respuesta 6</button>
-				<button id="btnSA_3" type="button" class="btn btn-outline-warning">Respuesta 7</button>
-      
+    <!--
+        <button id="btnSA_1" type="button" class="btn btn-outline-success">AlertJquery</button>
+				<button id="btnSA_2" type="button" class="btn btn-outline-info">ConfirmAlertJquery</button>
+        <button id="btnSA_3" type="button" class="btn btn-outline-warning">PromtJqueryAler</button>-->
+        
+       
        
           
         </div>
@@ -219,24 +223,58 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript"></script>		
 
 <!-- Core files -->
-<script src="jquery.alerts.js" type="text/javascript"></script>
-<link href="jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="../../Jquery/jquery.alerts.js" type="text/javascript"></script>
+<link href="../../Jquery/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
 
 
     
 <script>
-
-$("#btnSA_3").click( function() {
-					jalert('This is a custom alert box', 'Alert Dialog');
+/*
+$("#btnSA_1").click( function() {
+					jAlert('This is a custom alert box', 'Alert Dialog');
 				});
 
-				$("#btnSA_1").click( function() {
+				$("#btnSA_2").click( function() {
+          
 					jConfirm('Can you confirm this?', 'Confirmation Dialog', function(r) {
 						jAlert('Confirmed: ' + r, 'Confirmation Results');
 					});
 				});
-
-
+        $("#btnSA_3").click( function() {
+					jPrompt('Type something:', '', 'Calcular Precio Iva', 
+          function(r) {
+            
+						if( r>=18 ) {
+            
+            jAlert('Mayor ' + r);
+            }
+            else{
+              jAlert('Menor')
+            }
+					}
+          
+          );
+         
+          
+				});
+        
+   */
+   Swal
+    .fire({
+        title: "SEMINARIO DE SISTEMAS",
+        text: "Aux Practica N°1",
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonText: "Continuar",
+        cancelButtonText: "Cancelar",
+    })
+    .then(resultado => {
+        if (resultado.value) {
+            // Hicieron click en "Sí"
+            alertify.success("*Bienvenido*");
+        } 
+    });
+	
       const btn1 = document.getElementById("btn1"); //pregunta1
       const btnn = document.getElementById("btnn"); //pregunta1
       const btn2 = document.getElementById("btn2"); //pregunta2
@@ -633,7 +671,7 @@ let coniva = (precio + precio * iva / 100);
 return coniva;
 }
 
-let precio = Number(window.prompt("Introduce un precio"));
+let precio = Number(prompt("Introduce un precio"));
 
 let iva = Number(prompt("Introduce el iva"));
 
