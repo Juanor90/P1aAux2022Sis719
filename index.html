@@ -259,11 +259,13 @@ $("#btnSA_1").click( function() {
 				});
         
    */
+
+
    Swal
     .fire({
         title: "SEMINARIO DE SISTEMAS",
         text: "Aux Practica N°1",
-        icon: 'success',
+
         showCancelButton: false,
         confirmButtonText: "Continuar",
         cancelButtonText: "Cancelar",
@@ -271,10 +273,15 @@ $("#btnSA_1").click( function() {
     .then(resultado => {
         if (resultado.value) {
             // Hicieron click en "Sí"
-            alertify.success("*Bienvenido*");
+          Swal.fire({
+            icon:'success',
+            title: 'Bienvenido',
+            showConfirmButton: false,
+            timer: 1500
+          })
         } 
     });
-	
+
       const btn1 = document.getElementById("btn1"); //pregunta1
       const btnn = document.getElementById("btnn"); //pregunta1
       const btn2 = document.getElementById("btn2"); //pregunta2
