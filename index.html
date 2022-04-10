@@ -21,16 +21,24 @@
     <div class="container">
       <div class="jumbotron">
         <h2 class="text-center">Seminario de Sistemas 2022</h2>
-        <h3 class="display-3 text-center">Tarea N°2</h3>
-        <h6 class="text-right">Doc. Ing Ditmar Castro Angulo</h6>
-      </div>
-      <h5 class="text-center jumbotron">Auxiliatura Practica N°1</h5>
-      <div class="row">
-        <div class="col-lg-12">
-          <button class="btn btn-danger">Fanor choque Aguirre</button>
-        </div>
+        <h3 class="display-3 text-center">Práctica N°1</h3>
+        <h5 class="text-letf">Auxiliatura</h5>
+        <h6 class="text-right">Ingenieria de Sistemas</h6>
+
+        <button class="btn btn-outline-warning text-right">Doc. Ing Ditmar Castro Angulo</button>
+        <h6 class="text-letf"></h6>
+
+        <button class="btn btn-outline-warning">Aux Edson Olmedo Copa</button>
       </div>
       <div class="row text-center jumbotron">
+
+        <div class="col-lg-12">
+          <button type="button" class="btn btn-outline-success">Fanor choque Aguirre</button>
+        </div>
+
+
+
+
         <div class="col-lg-6">
           <br />
           <h5 class="btn btn-danger">SCRIPTS</h5>
@@ -339,7 +347,7 @@ $("#btnSA_1").click( function() {
         //BUCLE DO WHILE PARA INTRODUCIR VARIOS
         do {
           //PEDIMOS EL NÚMERO POR TECLADO
-          let numero = prompt("Introduce un numero");
+          var numero = prompt("Introduce un numero");
           //COMPROBAMOS QUE LO INTRODUCIDO ES UN NÚMERO
           if (Number(numero) == numero) {
             //CONVERTIMOS EL NÚMERO EN INTEGER (POR SI ACASO)
@@ -357,7 +365,7 @@ $("#btnSA_1").click( function() {
           //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
         } while (numero != undefined);
         //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-        swal("la suma todal de los numeros introducidoes es:" + suma);
+        alert("la suma todal de los numeros introducidoes es:" + suma);
       };
 
       //pregunta2
@@ -384,7 +392,7 @@ $("#btnSA_1").click( function() {
           //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
         } while (numero != undefined);
         //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO
-        alert("la suma todal de los numeros introducidoes es:" + suma);
+        swal("la suma todal de los numeros introducidoes es:" + suma);
       };
 
       //pregunta3
