@@ -235,15 +235,23 @@
             */<br/></h6><br/>
        
         <button onclick=" elfito();" type="button" class="btn btn-warning">Respuesta 18</button>
-        <h6 class="text-right">respuesta:console</h6>
-     <h6> 19.- Mi amigo Dani está trabajando en una tienda y con la llegada de las navidades tiene el almacén hecho un desastre y 
+        <h6 class="text-right">respuesta:console</h6><br/>
+     <h6 class="text-left"> 19.- Mi amigo Dani está trabajando en una tienda y con la llegada de las navidades tiene el almacén hecho un desastre y 
       no encuentra nada.
       Vamos a crear una función que recibe dos parámetros: un objeto que define el almacén y el producto que 
       buscamos.
       La función debe devolver un booleano que indique si se encuentra el string como valor en algún nivel del objeto. </h6> <br/>
         <button onclick=" almacen();" type="button" class="btn btn-warning">Respuesta 19</button>
-        <h6 class="text-right">respuesta:console</h6>
-      
+        <h6 class="text-right">respuesta:console</h6><br/>
+
+<h6 class="text-left">20.- ¡Hemos perdido a un reno y falta poco más de una semana para Navidad! 
+  Lo peor es que son tantos que no sabemos cuál es el que nos falta... ¡Qué lío! A ver, Elfon Musk ha hecho inventario 
+  y nos pasa un array con los ids de cada reno.
+   Lo bueno: los ids son números que pueden ir del 0 al 100, no están repetidos y sólo se ha perdido un reno.
+   Lo malo: la lista está desordenada y podría faltar el último...
+  Necesitamos una función que al pasarle la lista de ids de renos nos diga inmediatamente cuál es el que falta:</h6>
+  <button onclick=" reno();" type="button" class="btn btn-warning">Respuesta 20</button>
+  <h6 class="text-right">respuesta:console</h6><br/>     
       </div>
         </div>
       </div>
@@ -982,7 +990,33 @@ console.log(contains(almacen, 'camiseta'));
 console.log(contains(otroAlmacen, 'gameboy'));
 
 }
+function reno(){
+  function missingReindeer(ids) {
+  let salida;
+  const aux = [...Array(ids.length).keys()];
+  const res = ids.sort((a, b) => a - b);
+  (JSON.stringify(aux) === JSON.stringify(res))
+    ?
+      salida = res.at(-1) + 1
+    :
+    (
+      res.forEach((_, index, arr) => {
+        if (arr.indexOf(index) === -1) {
+          salida = index;
+        }
+      })
+    )
+  return salida;
+}
 
+console.log(missingReindeer([0, 2, 3])) //1
+console.log(missingReindeer([0,1]))
+console.log(missingReindeer([0]))
+console.log(missingReindeer([5, 6, 1, 2, 3, 7, 0]))
+
+
+
+}
     </script>
   </body>
 </html>
