@@ -192,21 +192,51 @@
          
          
           <button onclick=" Unicos();" type="button" class="btn btn-warning">Respuesta 16</button>
+          <h6 class="text-right">respuesta:console</h6>
           <h6>17.- Programa una función que dado un array de números devuelva un objeto con dos arreglos el primero con los 
             números pares y en el segundo con los números impare</h6>
          
          
           <button onclick=" arrayObjetos();" type="button" class="btn btn-warning">Respuesta 17</button>
-       
+          <h6 class="text-right">respuesta:console</h6>
+      
+         
+    
+    
+         
         </div>
     <!--
         <button id="btnSA_1" type="button" class="btn btn-outline-success">AlertJquery</button>
 				<button id="btnSA_2" type="button" class="btn btn-outline-info">ConfirmAlertJquery</button>
         <button id="btnSA_3" type="button" class="btn btn-outline-warning">PromtJqueryAler</button>-->
-        
+        <div class="col-lg-12">
+<br/>
+          <button onclick=" arrayObjetos();" type="button" class="btn btn-success">RETOS</button>
+        <h6 >18.- Te ha llegado una carta ✉️ con todos los regalos que debes preparar. El tema es que es una cadena de texto y es 
+          muy difícil de leer . ¡Menos mal que han puesto cada regalo separado por espacio! (aunque ten cuidado, porque 
+          al ser niños, igual han colado más espacios de la cuenta)
+          Encima nos hemos dado cuenta que algunas palabras vienen con un _ delante de la palabra, por 
+          ejemplo _playstation, que significa que está tachado y no se tiene que contar.
+          Transforma el texto a un objeto que contenga el nombre de cada regalo y las veces que aparece. Por ejemplo, si 
+          tenemos el texto:
+          </h6>
+          <h6 class="text-left">const carta = 'bici coche balón _playstation bici coche peluche'</h6>
+         
+          <h6 class="text-left"> Al ejecutar el método debería devolver lo siguiente</h6>
+          <h6 class="text-left">const regalos = listGifts(carta)
+            console.log(regalos)<br/>
+            /*<br/>
+            {<br/>
+             bici: 2,<br/>
+             coche: 2,<br/>
+             balón: 1,<br/>
+             peluche: 1<br/>
+            }<br/>
+            */<br/></h6><br/>
        
-       
-          
+        <button onclick=" elfito();" type="button" class="btn btn-warning">Respuesta 18</button>
+        <h6 class="text-right">respuesta:console</h6>
+      </div>
         </div>
       </div>
     </div>
@@ -868,6 +898,30 @@ paresImpares()
 paresImpares(284)
 paresImpares([1,2,3,4,5,7,8,6,9,12,11,10]);
 paresImpares([2, 3, 4, 5, 7, 8, 6, 9, 12, 11, 10,0,-3,-4,-12]);
+
+}
+//pregunta18
+function elfito(){
+
+  const carta = 'bici coche balón _playstation bici  coche   peluche';
+
+function listGifts(letter) {
+  const arrCarta = letter.split(" ");
+  return arrCarta.filter((regalo) => {
+    let value = regalo.startsWith("_")
+    if (value !== true && regalo !=="") return regalo !== value
+  })
+  .reduce((contador, regalo) => {
+    contador[regalo] = (contador[regalo] || 0) + 1;
+    return contador
+  }, {});
+}
+
+const regalos = listGifts(carta)
+console.log(regalos)
+
+
+
 
 }
 
